@@ -32,7 +32,7 @@ sn        |     operation     |          Static library                         
 1         | Object files (gcc)| gcc -c <inp1.c>                                   | gcc -fPIC -c <inp1.c>                       |           
 1         | Lib creation      | ar rc <out.a> <inp.o> <inp2.o> ....               | gcc -shared lib<name>.so <ip1.o> <ip2.o> ...| list of object codes 
 2         | indexing          | ranlib <out.a>                                    |
-3         | Link (gcc)        | gcc -o <out> <ip1.o> <ip2.o> ...  -L. lib<name>.a | gcc <ip1.o> <ip2.o>  -L. -l<name> -o <out>  |
+3         | Link (gcc)        | gcc -o <out> <ip1.o> <ip2.o> ...  -L. lib<name>.a | gcc <ip1.o> <ip2.o>  -L. -l< name > -o <out>  |
 
 
 **Position Independent Code (PIC)** - When the object files are generated, we have no idea where in memory they will be inserted in a program that will use them. Many different programs may use the same library, and each load it into a different memory in address. Thus, we need that all jump calls ("goto", in assembly speak) and subroutine calls will use relative addresses, and not absolute addresses. Thus, we need to use a compiler flag that will cause this type of code to be generated.
