@@ -14,8 +14,8 @@ serial  |               process       | input F_ext  | output f_ext  |      gcc 
 
 
 
-### Library
-The creation of a library is is as follows for both static and shared
+### C Library
+The creation of a library is as follows for both static and shared
 * Compile a list of object files
 * Insert them all into a library file
 
