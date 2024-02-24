@@ -1,7 +1,7 @@
 # C Clean sheet
 
 
-Compilation process
+## Compilation process
 
 (f_ext -> File Extensions)
 
@@ -69,8 +69,8 @@ void fn(int); /* function from local lib  header*/
 ```
 
 
-Loading A Shared Library Using dlopen()
-In order to open and load the shared library, one should use the dlopen() function. It is used this way:
+### Loading A Shared Library Using dlopen()
+In order to open and load the shared library, one should use the dlopen() function.
 
 ```
 #include <dlfcn.h>      /* defines dlopen(), etc.       */
@@ -85,7 +85,7 @@ if (!lib_handle) {
 }
 ```
 
-Calling Functions Dynamically Using dlsym()
+### Calling Functions Dynamically Using dlsym()
 ```
 struct local_file* (*readfile)(const char* file_path);
 /* then define a pointer to a possible error string */
@@ -110,7 +110,7 @@ a_file = (*readfile)("hello.txt");
 
 
 
-Unloading A Shared Library Using dlclose()
+### Unloading A Shared Library Using dlclose()
 
 ```
 $ dlclose(lib_handle);
