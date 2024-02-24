@@ -24,8 +24,9 @@ Linux         | .a                    | .so
 sn        |     operation     |          Static library                           |       Dynamic library     | Description
 ----------|-------------------|---------------------------------------------------|---------------------------|------------------------
 0         | Description       | Static archive library                            |                           |
-1         | create            | ar rc <out.a> <inp.o> <inp2.o> .... |             |                           | list of object codes 
-2         | indexing          | ranlib <out.a>                      |
+1         | Object files (gcc)| gcc -c <inp1.c> <imp2.c> ... -o <out.o>           | 
+1         | Lib creation      | ar rc <out.a> <inp.o> <inp2.o> ....              |                           | list of object codes 
+2         | indexing          | ranlib <out.a>                      
 3         | Link (gcc)        | gcc -o <out> <ip1.o> <ip2.o> ...  -L. <lib.a> 
 
 
