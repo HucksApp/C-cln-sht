@@ -19,7 +19,7 @@ The creation of a library is is as follows for both static and shared
 * Compile a list of object files
 * Insert them all into a library file
 
-  Libraries format lib<name>.a, lib<name>.so ...
+  Libraries format lib\<name>.a, lib\<name>.so ...
 
 os            | Static library f_ext  | Dynamic library f_ext
 --------------|-----------------------|------------------------
@@ -39,7 +39,7 @@ sn        |     operation     |          Static library                         
 In most compilers, this is done by specifying '-fPIC' or '-fpic' on the compilation command.
 
 
-The linker will look for the file 'lib<name>.so' (-l<name>) in the current directory (-L.)
+The linker will look for the file 'lib\<name>.so' (-l\<name>) in the current directory (-L.)
 use the 'LD_LIBRARY_PATH' environment variable to tell the dynamic loader to look in other directories.
 ```
 
