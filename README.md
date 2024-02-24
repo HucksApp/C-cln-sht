@@ -30,7 +30,7 @@ sn        |     operation     |          Static library                         
 ----------|-------------------|---------------------------------------------------|---------------------------------------------|------------------------
 0         | Description       | Static archive library                            | Shared                                      |
 1         | Object files (gcc)| gcc -c <inp1.c>                                   | gcc -fPIC -c <inp1.c>                       |           
-1         | Lib creation      | ar rc <out.a> <inp.o> <inp2.o> ....               | gcc -shared lib<name>.so <ip1.o> <ip2.o> ...| list of object codes 
+1         | Lib creation      | ar rc <out.a> <inp.o> <inp2.o> ....               | gcc -shared lib\<name>.so <ip1.o> <ip2.o> ...| list of object codes 
 2         | indexing          | ranlib <out.a>                                    |
 3         | Link (gcc)        | gcc -o <out> <ip1.o> <ip2.o> ...  -L. lib\<name>.a | gcc <ip1.o> <ip2.o>  -L. -l\<name> -o \<out>|
 
