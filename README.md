@@ -20,7 +20,24 @@ os            | Static library f_ext  | Dynamic library f_ext
 --------------|-----------------------|------------------------
 Windows       | .lib                  | .dll
 Linux         | .a                    | .so
-operation     |                       |
---------------------------------------------------------------
+
+sn        |     operation     |          Static library                           |       Dynamic library     | Description
+----------|-------------------|---------------------------------------------------|---------------------------|------------------------
+0         | Description       | Static archive library                            |                           |
+1         | create            | ar rc <out.a> <inp.o> <inp2.o> .... |             |                           | list of object codes 
+2         | indexing          | ranlib <out.a>                      |
+3         | Link (gcc)        | gcc -o <out> <ip1.o> <ip2.o> ...  -L. <lib.a> 
+
+
+
+```
+ To use the created library in c code.
+ Just create the function signature header from the lib
+
+void fn(int); /* function from local lib  header*/
+
+```
+  
+
 
 
