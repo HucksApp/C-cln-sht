@@ -1,4 +1,4 @@
-# C Clean sheet
+# C Clean sheet 
 
 
 ## Compilation process
@@ -14,7 +14,7 @@ serial  |               process       | input F_ext  | output f_ext  |      gcc 
 
 
 
-### C Library
+### C Library 🏛
 The creation of a library is as follows for both static and shared
 * Compile a list of .c files to object files
 * Insert all object file into a library file
