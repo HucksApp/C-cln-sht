@@ -131,8 +131,8 @@ target ... : prerequisites
   ... ...
 ```
 
-Terms  |    Description
--------|-----------------
+Terms        |    Description
+-------------|-----------------
 #            | commenting 
 \            | string new line or escape character for special characters like `\#`
 Goal         | Complete single make process -> target, prerequisites, recipe
