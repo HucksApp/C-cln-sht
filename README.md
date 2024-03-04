@@ -123,7 +123,7 @@ make can be considered the center of the development process by providing a road
 makefile contains a set of rules or actions (Goals) used to build an application
 **usage**
 * default file `make`
-* named file `make -f <makefile named>`
+* named file `make -f <makefile named>` or `make --file <makefile named>`
 * make target `make <Target>`
 
 **make default file name are searched in this hierachy**
