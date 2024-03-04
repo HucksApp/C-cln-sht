@@ -1,4 +1,4 @@
-![image](https://github.com/HucksApp/C-cln-sht/assets/58187974/d242267e-822f-4533-b241-8d02a7b20167)# C Clean sheet 
+# C Clean sheet 
 
 
 ## Compilation process
@@ -120,7 +120,17 @@ $ dlclose(lib_handle);
 make can be considered the center of the development process by providing a roadmap of an application’s components and how they fit together.
 
 ## makefile 📄
-this contains actions (Goals) for make process.
+makefile contains a set of rules or actions (Goals) used to build an application
+**usage**
+* default file `make`
+* named file `make -f <makefile named>`
+* make target `make <Target>`
+* 
+**make default file name are searched in this hierachy**
+* GNUmakefile
+* Makefile
+
+
 
 ### ***Goal*** Structure 🔎📄
 ```
@@ -146,3 +156,4 @@ Default Goal | the first goal in the makefile is default. To change default goal
 
 Variables  |    Description
 -----------|------------------ 
+.PHONY | This prevents make from getting confused that the target is a process not a file
