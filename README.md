@@ -140,6 +140,10 @@ or to neglect File Not Found error if included file do not exists
 -include filenames…
 ```
 
+**To specify the directory the included file is at, use the***
+`-I` or `--include-dir` options with make
+
+
 
 ### ***Goal*** Structure 🔎📄
 ```
