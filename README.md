@@ -125,11 +125,20 @@ makefile contains a set of rules or actions (Goals) used to build an application
 * default file `make`
 * named file `make -f <makefile named>`
 * make target `make <Target>`
-* 
+
 **make default file name are searched in this hierachy**
 * GNUmakefile
 * Makefile
 
+**To use multiple makefile, run include directive**
+```
+include filenames…
+```
+or to neglect File Not Found error if included file do not exists
+
+```
+-include filenames…
+```
 
 
 ### ***Goal*** Structure 🔎📄
