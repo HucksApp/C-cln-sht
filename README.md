@@ -144,7 +144,7 @@ target ... : prerequisites
 Terms        |    Description
 -------------|-----------------
 \-           | surpress any error `-rm leave.txt` will ignore error if the file do not exists and move to next command
-@            | surpress printing any recipie before executing the recipe which is a default make behaviour.
+@            | surpress printing recipe statement before executing the recipe which is a default make behaviour.
 \#           | comments
 \\           | string new line or escape character for special characters like `\#`
 Goal         | Complete single make process -> target, prerequisites, recipe
