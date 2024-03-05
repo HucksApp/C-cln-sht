@@ -139,7 +139,7 @@ or to neglect File Not Found error if included file do not exists
 ```
 -include filenames…
 ```
-
+The default search directories are in this order (1) /usr/local/include,  (2) /usr/gnu/include, (3) /usr/local/include, (4) /usr/include.
 **To specify the directory the included file is at, use the***
 `-I` or `--include-dir` options with make
 
@@ -154,6 +154,15 @@ target ... : prerequisites
   ... ...
 ```
 
+## Make command options
+
+option          |   Description
+----------------|-------------
+
+
+
+
+
 Terms        |    Description
 -------------|-----------------
 \-           | surpress any error `-rm leave.txt` will ignore error if the file do not exists and move to next command
@@ -167,6 +176,8 @@ recipe       | Actions that make carries out. It more than one command, either o
 Default Goal | the first goal in the makefile is default. To change default goal. set `.DEFAULT_GOAL` variable like `.DEFAULT_GOAL := <prefered default goal>`
 
 
-Variables  |    Description
------------|------------------ 
-.PHONY | This prevents make from getting confused that the target is a process not a file
+Variables      |    Description
+---------------|------------------ 
+.PHONY         | This prevents make from getting confused that the target is a process not a file
+.INCLUDE_DIRS  |  contain the current list of directories that make will search for included files
+MAKEFILE_LIST  | Contains the name of each makefile that is parsed by make, in the order in which it was parsed.
