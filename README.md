@@ -130,11 +130,11 @@ makefile contains a set of rules or actions (Goals) used to build an application
 * GNUmakefile
 * Makefile
 
-**To use multiple makefile, run include directive**
+**To use multiple makefile, use include directive**
 ```
 include filenames…
 ```
-or to neglect File Not Found error if included file do not exists
+or to neglect File Not Found error if included file do not exists add -
 
 ```
 -include filenames…
@@ -173,10 +173,10 @@ else
 text-if-one-and-two-are-false
 endif
 ```
-**if conditional directive Types**
-* ifeq (arg1, arg2)
-* ifdef variable-name
-* ifndef variable-name
+**if conditional directive Types** 
+* ifeq (arg1, arg2) -> if arg1 aand arg2 are equal
+* ifdef variable-name -> if variable is defined
+* ifndef variable-name -> if variable is not defined
 
 #### usage
 ```
