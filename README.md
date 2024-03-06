@@ -240,30 +240,30 @@ recipe       | Actions(shell commands passed by make to the default shell) that 
 Default Goal | the first goal in the makefile is default. To change default goal. set `.DEFAULT_GOAL` variable like `.DEFAULT_GOAL := <prefered default goal>`
 
 
-Variables      |    Description
----------------|------------------ 
-.PHONY         | This prevents make from getting confused that the target is a process not a file
-.RECIPEPREFIX  | Character that begings every recipe line. Default is a tab, e.g `.RECIPEPREFIX = >`.
-.DEFAULT_GOAL  | the first goal in the makefile is default. e.g  `.DEFAULT_GOAL := <prefered default goal>`
-.INCLUDE_DIRS  |  contain the current list of directories that make will search for included files
-MAKEFILE_LIST  | Contains the name of each makefile that is parsed by make, in the order in which it was parsed.
-MAKE_RESTARTS  | This variable is set only if this instance of make has restarted or remade. it will contain the number of times this instance has restarted
-MAKE_TERMOUT   | Make stdout variable, if populated make sends to stdout
-MAKE_TERMERR   | Make stderr variable, if populated make sends to stderr
-.VARIABLES     | Expands to a list of the names of all global variables defined so far.
-.FEATURES      | Expands to a list of special features supported by this version of make
-.INCLUDE_DIRS  | Expands to a list of directories that make searches for included makefiles
-.EXTRA_PREREQS | Each word in this variable is a new prerequisite which is added to targets for which it is set.
-`$@`           | The file name of the target of the rule
-`$%`           | The target member name, when the target is an archive member
-`$<`           | The name of the first prerequisite
-`$^`           | The names of all the prerequisites, with spaces between them.
-`$+`           | This is like `$^`, but prerequisites listed more than once are duplicated in the order they were listed in the makefile
-`$?`           | The names of all the prerequisites that are newer than the target, with spaces between them
-`$\|`          | The names of all the order-only prerequisites, with spaces between them
-`$*`           | The stem with which an implicit rule matches 
-`$(@D)`        | The directory part of the file name of the target, with the trailing slash removed
-`$(@F)`        | The file-within-directory part of the file name of the target.
+Variables        |  Description
+-----------------|------------------ 
+`.PHONY`         | This prevents make from getting confused that the target is a process not a file
+`.RECIPEPREFIX`  | Character that begings every recipe line. Default is a tab, e.g `.RECIPEPREFIX = >`.
+`.DEFAULT_GOAL`  | the first goal in the makefile is default. e.g  `.DEFAULT_GOAL := <prefered default goal>`
+`.INCLUDE_DIRS`  |  contain the current list of directories that make will search for included files
+`MAKEFILE_LIST`  | Contains the name of each makefile that is parsed by make, in the order in which it was parsed.
+`MAKE_RESTARTS`  | This variable is set only if this instance of make has restarted or remade. it will contain the number of times this instance has restarted
+`MAKE_TERMOUT`   | Make stdout variable, if populated make sends to stdout
+`MAKE_TERMERR`   | Make stderr variable, if populated make sends to stderr
+`.VARIABLES`     | Expands to a list of the names of all global variables defined so far.
+`.FEATURE`S      | Expands to a list of special features supported by this version of make
+`.INCLUDE_DIRS`  | Expands to a list of directories that make searches for included makefiles
+`.EXTRA_PREREQS` | Each word in this variable is a new prerequisite which is added to targets for which it is set.
+`$@`             | The file name of the target of the rule
+`$%`             | The target member name, when the target is an archive member
+`$<`             | The name of the first prerequisite
+`$^`             | The names of all the prerequisites, with spaces between them.
+`$+`             | This is like `$^`, but prerequisites listed more than once are duplicated in the order they were listed in the makefile
+`$?`             | The names of all the prerequisites that are newer than the target, with spaces between them
+`$\|`            | The names of all the order-only prerequisites, with spaces between them
+`$*`             | The stem with which an implicit rule matches 
+`$(@D)`          | The directory part of the file name of the target, with the trailing slash removed
+`$(@F)`          | The file-within-directory part of the file name of the target.
 `$(*D)` or `$(*F)` |  The directory part and the file-within-directory part of the stem; dir and foo in this example.
 `$(%D)` or `$(%F)` | The directory part and the file-within-directory part of the target archive member name.
 `$(<D)` or `$(<F)` | The directory part and the file-within-directory part of the first prerequisite.
