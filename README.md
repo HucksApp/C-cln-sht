@@ -174,6 +174,70 @@ option             |   Description
 ➖                 | `j` jobs -> Prints messages giving details on the invocation of specific subcommands.
 ➖                 |`m` makefile -> By default, the above messages are not enabled while trying to remake the makefiles. This option enables messages while rebuilding makefiles, too. Note that the `all' option does enable this option. This option also enables `basic' messages.
 
+`-e` or `--environment-overrides` | Give variables taken from the environment precedence over variables from makefiles
+`-f file` or  `--file=file` or `--makefile=file` | Read the file named file as a makefile
+`-h` or `--help` | Remind you of the options that make understands and then exit.
+`-i` or `--ignore-errors`  | Ignore all errors in commands executed to remake files
+`-I dir` or `--include-dir=dir` |  Specifies a directory dir to search for included makefiles. If several `-I` options are used to specify several directories, the directories are searched in the order specified.
+`-j [jobs]` or `--jobs[=jobs]` | Specifies the number of jobs (commands) to run simultaneously. With no argument, make runs as many jobs simultaneously as possible. If there is more than one `-j` option, the last one is effective
+`-k` or `--keep-going`  | Continue as much as possible after an error. While the target that failed, and those that depend on it, cannot be remade, the other prerequisites of these targets can be processed all the same
+`-l [load]` or `--load-average[=load]` or  `--max-load[=load]` |  Specifies that no new jobs (commands) should be started if there are other jobs running and the load average is at least load (a floating-point number). With no argument, removes a previous load limit
+`-n'
+`--just-print'
+`--dry-run'
+`--recon'
+Print the commands that would be executed, but do not execute them. See section Instead of Executing the Commands.
+`-o file'
+`--old-file=file'
+`--assume-old=file'
+Do not remake the file file even if it is older than its prerequisites, and do not remake anything on account of changes in file. Essentially the file is treated as very old and its rules are ignored. See section Avoiding Recompilation of Some Files.
+`-p'
+`--print-data-base'
+Print the data base (rules and variable values) that results from reading the makefiles; then execute as usual or as otherwise specified. This also prints the version information given by the `-v' switch (see below). To print the data base without trying to remake any files, use `make -qp'. To print the data base of predefined rules and variables, use `make -p -f /dev/null'. The data base output contains filename and linenumber information for command and variable definitions, so it can be a useful debugging tool in complex environments.
+`-q'
+`--question'
+"Question mode". Do not run any commands, or print anything; just return an exit status that is zero if the specified targets are already up to date, one if any remaking is required, or two if an error is encountered. See section Instead of Executing the Commands.
+`-r'
+`--no-builtin-rules'
+Eliminate use of the built-in implicit rules (see section Using Implicit Rules). You can still define your own by writing pattern rules (see section Defining and Redefining Pattern Rules). The `-r' option also clears out the default list of suffixes for suffix rules (see section Old-Fashioned Suffix Rules). But you can still define your own suffixes with a rule for .SUFFIXES, and then define your own suffix rules. Note that only rules are affected by the -r option; default variables remain in effect (see section Variables Used by Implicit Rules); see the `-R' option below.
+`-R'
+`--no-builtin-variables'
+Eliminate use of the built-in rule-specific variables (see section Variables Used by Implicit Rules). You can still define your own, of course. The `-R' option also automatically enables the `-r' option (see above), since it doesn't make sense to have implicit rules without any definitions for the variables that they use.
+`-s'
+`--silent'
+`--quiet'
+Silent operation; do not print the commands as they are executed. See section Command Echoing.
+`-S'
+`--no-keep-going'
+`--stop'
+Cancel the effect of the `-k' option. This is never necessary except in a recursive make where `-k' might be inherited from the top-level make via MAKEFLAGS (see section Recursive Use of make) or if you set `-k' in MAKEFLAGS in your environment.
+`-t'
+`--touch'
+Touch files (mark them up to date without really changing them) instead of running their commands. This is used to pretend that the commands were done, in order to fool future invocations of make. See section Instead of Executing the Commands.
+`-v'
+`--version'
+Print the version of the make program plus a copyright, a list of authors, and a notice that there is no warranty; then exit.
+`-w'
+`--print-directory'
+Print a message containing the working directory both before and after executing the makefile. This may be useful for tracking down errors from complicated nests of recursive make commands. See section Recursive Use of make. (In practice, you rarely need to specify this option since `make' does it for you; see section The `--print-directory' Option.)
+`--no-print-directory'
+Disable printing of the working directory under -w. This option is useful when -w is turned on automatically, but you do not want to see the extra messages. See section The `--print-directory' Option.
+`-W file'
+`--what-if=file'
+`--new-file=file'
+`--assume-new=file'
+Pretend that the target file has just been modified. When used with the `-n' flag, this shows you what would happen if you were to modify that file. Without `-n', it is almost the same as running a touch command on the given file before running make, except that the modification time is changed only in the imagination of make. See section Instead of Executing the Commands.
+`--warn-undefined-variables'
+Issue a warning message whenever make sees a reference to an undefined variable. This can be helpful when you are trying to debug makefiles which use variables in complex ways.
+
+
+
+
+
+
+
+
+
 
 
 
