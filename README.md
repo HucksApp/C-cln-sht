@@ -159,21 +159,20 @@ target ... : prerequisites     -----------------------
 
 ## Make command options
 
-option             |   Description
--------------------|-------------
-`-f` or  `--file `   | 
-`-t` or `--touch `   |
-`-q` or `--question` |
-`-n` or `--just-print`|
-`-C dir` or  `--directory=dir` | Change to directory dir before reading the makefiles
-`-d` or `--debug[=options]` |  Print debugging information in addition to normal processing.
-➖                 |  options `a` all -> all types of debugging output are enabled. This is equivalent to using `-d'.
-➖                 |        `b` basic -> basic Basic debugging prints each target that was found to be out-of-date, and whether the build was successful or not.
-➖                 | `v` verbose -> A level above `basic`; includes messages about which makefiles were parsed, prerequisites that did not need to be rebuilt, etc.
-➖                 | `i` implicit -> Prints messages describing the implicit rule searches for each target. This option also enables `basic' messages.
-➖                 | `j` jobs -> Prints messages giving details on the invocation of specific subcommands.
-➖                 |`m` makefile -> By default, the above messages are not enabled while trying to remake the makefiles. This option enables messages while rebuilding makefiles, too. Note that the `all' option does enable this option. This option also enables `basic' messages.
-
+option                               |   Description
+-------------------------------------|-------------------------------------
+`-f` or  `--file `                   | 
+`-t` or `--touch `                   |
+`-q` or `--question`                 |
+`-n` or `--just-print`               |
+`-C dir` or  `--directory=dir`       | Change to directory dir before reading the makefiles
+`-d` or `--debug[=options]`          |  Print debugging information in addition to normal processing.
+➖                                   |  options `a` all -> all types of debugging output are enabled. This is equivalent to using `-d'.
+➖                                   |        `b` basic -> basic Basic debugging prints each target that was found to be out-of-date, and whether the build was successful or not.
+➖                                    | `v` verbose -> A level above `basic`; includes messages about which makefiles were parsed, prerequisites that did not need to be rebuilt, etc.
+➖                                    | `i` implicit -> Prints messages describing the implicit rule searches for each target. This option also enables `basic' messages.
+➖                                    | `j` jobs -> Prints messages giving details on the invocation of specific subcommands.
+➖                                    |`m` makefile -> By default, the above messages are not enabled while trying to remake the makefiles. This option enables messages while rebuilding makefiles, too. Note that the `all` option does enable this option. This option also enables `basic' messages.
 `-e` or `--environment-overrides` | Give variables taken from the environment precedence over variables from makefiles
 `-f file` or  `--file=file` or `--makefile=file` | Read the file named file as a makefile
 `-h` or `--help` | Remind you of the options that make understands and then exit.
