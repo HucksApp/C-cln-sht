@@ -167,11 +167,18 @@ option             |   Description
 `-t or --touch `   |
 `-q or --question` |
 `-n or --just-print`| 
-## Make variable
-* Declare: `var1 = text text text`
 
 
+## Make Variable
 
+* Declare ->  `var1 = text text text`
+* reference -> `$(var1)`
+
+## Make Function
+* Declare ->  
+* reference -> 
+
+  
 ## Make Conditional Statement
 ```
 if conditional-directive-one          
