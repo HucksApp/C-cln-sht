@@ -119,8 +119,6 @@ $ dlclose(lib_handle);
 
 
 
-
-
 ## MAKE
 make can be considered the center of the development process by providing a roadmap of an application’s components and how they fit together.
 
@@ -156,7 +154,7 @@ The default search directories are in this order (1) /usr/local/include,  (2) /u
 
 target ... : prerequisites     -----------------------
   ... recipe                   # all recipe (shell commands and process) are passed to the shell directly
-  ... ...                      # so recipe syntax should should follow shell scripting not makefile syntax
+  ... ...                      # so recipe syntax should should follow ✅ shell scripting not  ❌ makefile syntax
 ```                             
 
 ## Make command options
@@ -171,15 +169,21 @@ option             |   Description
 
 ## Make Variable
 
-* Declare ->  `var1 = text text text`
-* reference -> `$(var1)`
+* Declare ->  `var1 = text text text` or   `r = text text text`
+*  Assignment
+  *  `=` recursively expanded -> value can not be another variable or function call ❌ `var2 = $(var1) text` but  ✅  `var2 = text text`
+  *  `:=` simply expanded  ->  value can be another variable or function call ✅  `var2 := $(var1) text` and ✅ `var2 := text text`
+  *  `+=` appending assignment -> append the new value to the end of old value `var1 += new value`
+  *  `?=`  conditional assignment ->  set to a value to a variable only if variable is not already set `var1 ?= value`
+* reference -> `$(var1)  ` or  `${var1}` and `$(r)` or `${r}` or can only be a letter not word if referenced withouth -> {}, () ✅ `$r` but not ❌ `$var1`
 
 ## Make Function
 * Declare ->  
 * reference -> 
 
-  
-## Make Conditional Statement
+## Directive
+
+### Make Conditional Statement
 ```
 if conditional-directive-one          
 text-if-true
@@ -190,8 +194,8 @@ text-if-one-and-two-are-false
 endif
 ```
 **if conditional directive Types** 
-* ifeq (arg1, arg2) -> if arg1 and arg2 are equal
-* ifneq (arg1, arg2) -> if arg1 aand arg2 are not equal
+* ifeq (arg1, arg2)  or ifeq "arg1" "arg2" -> if arg1 and arg2 are equal
+* ifneq (arg1, arg2) or ifneq "arg1" "arg2" -> if arg1 aand arg2 are not equal
 * ifdef variable-name -> if variable is defined
 * ifndef variable-name -> if variable is not defined
 
@@ -204,6 +208,20 @@ else ifeq ($(var1),2)
 else
  var3 := 0
 endif
+```
+
+
+### override Directive
+```
+override variable = value
+```
+or
+```
+override variable := value
+```
+To append more text to a variable defined on the command line, use:
+```
+override variable += more text
 ```
 
 
